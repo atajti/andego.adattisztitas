@@ -1,13 +1,16 @@
 Package: andego.adattisztitas
 Title: Alapvető adattisztítási feladatok magyarul
 Version: 0.0.0.9000
-Authors@R: person("Andras", "Tajti", email = "atajti@andego.hu", role = c("aut", "cre"))
-Description: Szövegtisztító függvények a kényelem kedvéért, címtisztítás
+Author: Andras Tajti, Laszlo Hajdu
+Maintainer: Andras Tajti <atajti@andego.hu>
+Description: Alapvetően magyar címeket alakít "Irsz Település Utca, házszám" az addressNormalizer függvény, azonban ehhez sok, standard szövegtisztítás szükséges.
 Depends:
     R (>= 3.3.3)
-License: MIT
+Imports:
+    stringr
+Suggests:
+    testthat
+License: MIT + file LICENSE
 LazyData: true
-Maintainer: Tajti András <atajti@andego.hu>
-Authors: Tajti Andras <atajti@andego.hu>, Hajdu Laszlo
 RoxygenNote: 5.0.1
 Encoding: UTF-8
