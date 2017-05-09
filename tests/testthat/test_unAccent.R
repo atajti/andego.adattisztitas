@@ -70,3 +70,37 @@ test_that("unAccent works for HUN letters in alternative mode", {
   expect_equal(unAccent("Ű", TRUE),
                "U")
 })
+
+test_that("Result remains the same length in standard mode", {
+  expect_equal(length(unAccent("á")),
+               1)
+  expect_equal(length(unAccent(c("á", "b"))),
+               2)
+  expect_equal(length(unAccent(c("á", "b", "Ő"))),
+               3)
+})
+
+test_that("Result remains the same length in alternative mode", {
+  expect_equal(length(unAccent("á", TRUE)),
+               1)
+  expect_equal(length(unAccent(c("á", "b"), TRUE)),
+               2)
+  expect_equal(length(unAccent(c("á", "b", "Ő"), TRUE)),
+               3)
+})
+
+test_that("NA and others converts to character as expected", {
+  expect_equal(unAccent(NA), NA_character_)
+  expect_identical(unAccent(c("á", NA)),
+                   c("a", NA_character_))
+  expect_equal(unAccent(NA, TRUE), NA_character_)
+  expect_identical(unAccent(c("á", NA), TRUE),
+                   c("a", NA_character_))
+
+  expect_equal(unAccent(factor(NA)), NA_character_)
+  expect_identical(unAccent(factor(c("á", NA))),
+                   c("a", NA_character_))
+  expect_equal(unAccent(factor(NA, TRUE)), NA_character_)
+  expect_identical(unAccent(factor(c("á", NA)), TRUE),
+                   c("a", NA_character_))
+  })
