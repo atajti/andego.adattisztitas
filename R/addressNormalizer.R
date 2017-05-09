@@ -18,8 +18,12 @@
 #' @export
 
 addressNormalizer <- function(x){
-  irszam=clean_zip(x)
-  varos=clean_city(varosok[varosok$postal==irszam]$City[1])
-  street=clean_street(x)
+  irszam <- cleanZip(x)
+  irsz_sorrend <- sapply(irszam,
+                         function(irsz){
+                           which(irsz == varosok$postal)
+                         })
+  varos <- cleanCity(varosok[irsz_sorrend, "City"])
+  street <- cleanStreet(x)
   return(paste(irszam,varos,street))
 }

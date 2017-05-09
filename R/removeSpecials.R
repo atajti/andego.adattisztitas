@@ -14,7 +14,7 @@
 #' Hajdu László
 #'
 #' @examples
-#' removeSpecials("Ꞁ ¤")
+#' removeSpecials("Uj\nsor")
 #'
 #' @export
 

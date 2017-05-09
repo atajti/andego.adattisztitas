@@ -19,7 +19,7 @@ Csak betűk, számok és üres karaktereket tart meg, a többit kivágja.
 Az :alnum: és a :blank: osztályú karakterek maradnak csak meg.
 }
 \examples{
-removeSpecials("Ꞁ ¤")
+removeSpecials("Uj\\nsor")
 
 }
 \author{
