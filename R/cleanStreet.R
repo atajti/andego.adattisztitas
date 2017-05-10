@@ -154,16 +154,18 @@ cleanStreet <- function(x){
     value <- STREET2[i]
     key <- names(value)
     value <- unname(value)
-    x<-gsub(key,value,x)
+    x<-gsub(names(STREET2[i]),
+            STREET2[i],
+            x)
   }
   
   
-  x <- removeSpecials(x);
+  x <- removeSpecials(x)
   #1 vagy több whitespaceket kicseréli ; karakterre
   x <- gsub("\\s{1,}",";",x)
   #splitelem az így kapott stringet aztán a 3. helyen lévő szó lesz az utca
   delimited <- strsplit(x,";")
-  street <- delimited[[1]][3]
+  street <- sapply(delimited, "[", 3)
   
   return(paste(street,hnumber))
 }
