@@ -16,6 +16,13 @@ karakter vektor, \code{x} minden elemére egy javított verzió
 Egy irányítószámból, településből, köztérből és házszámból álló
   címek egységes alakra hozása.
 }
+\section{TODO}{
+
+A városok jelenleg egy lista alapján irányítoszámokból jön létre.
+  Mivel egy irányítoszám több elepüléshez tartozik, ez a módszer
+  adatvesztéssel jár. A listát városnév-tisztításra kéne csak
+  használni.
+}
 \examples{
 cimek <- c("8000 Siófok, Ballagó utca 14/a",
            "8000 Siofk, Ballagó utca 14/a 3. em 31.")
