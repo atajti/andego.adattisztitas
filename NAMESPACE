@@ -2,6 +2,7 @@
 
 export(addressNormalizer)
 export(cleanCity)
+export(cleanPersonNames)
 export(cleanStreet)
 export(cleanZip)
 export(removeAllDot)
