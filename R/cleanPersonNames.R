@@ -29,18 +29,23 @@
 #' @export
 
 cleanPersonNames <- function(x){
-  x <- strsplit(gsub("[[:punct:]]", "",
+  x_split <- strsplit(gsub("[[:punct:]]", "",
                      removeSpecials(unAccent(toupper(trimws(removePrefixes(x)))))),
          split=" ")
 
-  tiszta_x <- sapply(x, function(darabolt_nev){
+  tiszta_x <- sapply(x_split, function(darabolt_nev){
     if(length(darabolt_nev)>2 & !(nchar(darabolt_nev[1])<3)){
       darabolt_nev[2] <- substr(darabolt_nev[2], 0, 1)
     }
-    return(darabolt_nev)})
+    darabolt_nev})
   
-
-  return(sapply(tiszta_x, paste0, collapse=" "))
+  tiszta_x <- if(is.list(tiszta_x)){
+                sapply(tiszta_x, paste0, collapse=" ")
+              } else {
+                paste0(tiszta_x, collapse=" ")
+              }
+  tiszta_x[is.na(x)] <- NA
+  return(tiszta_x)
 }
 
 removePrefixes <- function(x){
