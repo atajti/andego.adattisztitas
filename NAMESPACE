@@ -2,9 +2,11 @@
 
 export(addressNormalizer)
 export(cleanCity)
+export(cleanFirms)
 export(cleanPersonNames)
 export(cleanStreet)
 export(cleanZip)
+export(detectFirms)
 export(removeAllDot)
 export(removeSpaces)
 export(removeSpecials)

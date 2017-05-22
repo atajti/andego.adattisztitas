@@ -48,10 +48,14 @@ cleanPersonNames <- function(x){
   return(tiszta_x)
 }
 
-removePrefixes <- function(x){
-  torlendok <- c("dr", "id", "ifj", "phd")
-  return(gsub(paste0(torlendok, "[\\.| ]", collapse="|"),
-              "",
-              x,
-              ignore.case=TRUE))
+removePrefixes <- function(x) {
+  elo = "(dr|med|mvdr|mudr|phd|phdr|csc|dsc|rndr|judr|mgr|id|idõsebb|ifj|ijf|ifjabb|\u00F6zv|\u00F6zvegy|kk)"
+  elo = paste("^", elo, "((\\.)|(\\s)+)|(\\s)+", elo, "((\\.)|(\\s)+)|(\\s)+", 
+      elo, "$", sep = "")
+  i = 0
+  while (any(grepl(elo, x, ignore.case = T))) {
+      i = i + 1
+      x <- gsub(elo, " ", x, ignore.case = T)
+  }
+  return(stringr::str_trim(x))
 }
