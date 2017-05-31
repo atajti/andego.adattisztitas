@@ -8,6 +8,10 @@
 #' Jelenleg a gyakori hibás utcanevek a kódba vannak égetve,
 #'   ezt később érdemes volna modulárisan cserélhetővé tenni.
 #'
+#' Jelenleg az \code{unAccent(x, alternative=TRUE)} van használatban,
+#'   mivel az \code{iconv} a rendszer kódolását, és nem a sztring
+#'   kódolását veszi alapul
+#'
 #' @return
 #' \code{x}-nel azonos hosszú karakter vektor
 #'
@@ -140,7 +144,7 @@ cleanStreet <- function(x){
                "SZENT ROKUS"="SZENTROKUS",
                "SZENT SEBESTYEN"="SZENTSEBESTYEN")
 
-  x <- unAccent(x)
+  x <- unAccent(x, T)
   x <- toupper(x)
   x <- trimws(x)
   #kitöröljük az irányítószámot a stringből

@@ -21,7 +21,8 @@ cleanFirms <- function(x){
 
   # ha nem nagybetűs, sanszos hogy nincs tisztítva:
   if(any(sapply(!(x == toupper(x)), isTRUE))){
-    stop("Kisbetűs szövegrészletet találtam. Tisztítva van a név?")
+    x <- toupper(x)
+    # stop("Kisbetűs szövegrészletet találtam. Tisztítva van a név?")
   }
 
   clean_firm_vect <- x

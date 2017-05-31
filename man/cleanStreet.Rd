@@ -19,6 +19,10 @@ Megtisztítja a kapott irányítószámokat potenciális problémáktól.
 
 Jelenleg a gyakori hibás utcanevek a kódba vannak égetve,
   ezt később érdemes volna modulárisan cserélhetővé tenni.
+
+Jelenleg az \code{unAccent(x, alternative=TRUE)} van használatban,
+  mivel az \code{iconv} a rendszer kódolását, és nem a sztring
+  kódolását veszi alapul
 }
 \examples{
 cleanStreet(" 3120 Dorgalfalva, Kossuth utca 10.")
