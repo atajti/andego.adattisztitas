@@ -24,7 +24,8 @@ detectFirms <-
 function(chr_vect){
 
   if(any(grepl("[a-z]", chr_vect))){
-    stop("Kisbetűk is vannak. Lehet hogy nem tisztítottak? Tedd be clean_names2-be.")
+    chr_vect <- toupper(unAccent(chr_vect))
+    # warning("Kisbetűk is vannak. Lehet hogy nem tisztítottak? Tedd be clean_names2-be.")
   }
 
   res <- grepl(paste("ZRT", "NYRT", "KFT", "BT", "RESZVENYTARSASAG",
