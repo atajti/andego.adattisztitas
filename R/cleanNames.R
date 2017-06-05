@@ -27,7 +27,7 @@
 cleanNames <- function(x){
   res <- character(length(x))
   firms <- detectFirms(x)
-  res[!firms] <- cleanPersonNames(x[!firms])
-  res[firms] <- cleanFirms(x[firms])
+  res[!isTRUE(firms)] <- cleanPersonNames(x[!isTRUE(firms)])
+  res[isTRUE(firms)] <- cleanFirms(x[isTRUE(firms)])
   return(res)
 }
