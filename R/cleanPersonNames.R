@@ -29,11 +29,15 @@
 #' @export
 
 cleanPersonNames <- function(x){
+  if(!length(x)){
+    return(character(0))
+  }
+
   x_split <- strsplit(gsub("[[:punct:]]", "",
                      removeSpecials(unAccent(toupper(trimws(removePrefixes(x)))))),
          split=" ")
 
-  tiszta_x <- sapply(x_split, function(darabolt_nev){
+  tiszta_x <- lapply(x_split, function(darabolt_nev){
     if(length(darabolt_nev)>2 & !(nchar(darabolt_nev[1])<3)){
       darabolt_nev[2] <- substr(darabolt_nev[2], 0, 1)
     }
