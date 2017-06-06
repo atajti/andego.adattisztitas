@@ -3,6 +3,7 @@
 export(addressNormalizer)
 export(cleanCity)
 export(cleanFirms)
+export(cleanNames)
 export(cleanPersonNames)
 export(cleanStreet)
 export(cleanZip)
