@@ -7,3 +7,7 @@ test_that("példa működik", {
                  "Magyar Telekom Nyrt")))),
                c("ANDEGO TANACSADO KFT", "MAGYAR TELEKOM RT"))
   })
+
+test_that("nem nagybetős-ékezettelített neveken működik",
+  expect_equal(cleanFirms("GVC George's Venture Capital Zártkörűen Működő Részvénytársaság"),
+               "GVC GEORGE'S VENTURE CAPITAL RT"))

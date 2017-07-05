@@ -12,7 +12,7 @@ test_that("magánszemélyek megtisztulnak", {
   expect_identical(cleanNames("Sándor József"),
                    "SANDOR JOZSEF")
   expect_identical(cleanNames("Sándor József Benedek"),
-                   "SANDOR J BENEDEK")
+                   "SANDOR JOZSEF")
   expect_identical(cleanNames("S. József Benedek"),
                    "S JOZSEF BENEDEK")
 })

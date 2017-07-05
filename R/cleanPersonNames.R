@@ -10,6 +10,9 @@
 #'   -> Kiss S József'), kivétel, ha az első név egy vagy két betűből
 #'   áll - ekkor a középső nevet teljesen meghagyjuk (N Nagy Nándor)
 #'
+#' Ez msot átalakult azzá, hogy az első két név, kivétel ha az első
+#'   csak egy-két karakter, mert akkor az első három szó lesz megtartva.'
+#'
 #' @section TODO:
 #' Egyrészt karaktereket és nem betűket különböztetünk meg, Szabó Sz
 #'   Balázs -> Szabó S Balázs, másrészt római számokat is érdemes
@@ -39,7 +42,9 @@ cleanPersonNames <- function(x){
 
   tiszta_x <- lapply(x_split, function(darabolt_nev){
     if(length(darabolt_nev)>2 & !(nchar(darabolt_nev[1])<3)){
-      darabolt_nev[2] <- substr(darabolt_nev[2], 0, 1)
+      darabolt_nev <- darabolt_nev[1:2]
+    } else if(length(darabolt_nev)>2 & (nchar(darabolt_nev[1])<3)){
+      darabolt_nev <- darabolt_nev[1:3]
     }
     darabolt_nev})
   

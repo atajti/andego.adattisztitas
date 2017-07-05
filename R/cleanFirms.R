@@ -12,8 +12,8 @@
 #' András Tajti <atajti@andego.hu>
 #'
 #' @examples
-#' cleanFirms(toupper(unAccent(c("Andego Tanácsadó Korlátolt felelősségű társaság",
-#'                               "Magyar Telekom Nyrt"))))
+#' cleanFirms(c("Andego Tanácsadó Korlátolt felelősségű társaság",
+#'              "Magyar Telekom Nyrt"))
 #'
 #' @export
 
@@ -21,7 +21,7 @@ cleanFirms <- function(x){
 
   # ha nem nagybetűs, sanszos hogy nincs tisztítva:
   if(any(sapply(!(x == toupper(x)), isTRUE))){
-    x <- toupper(x)
+    x <- toupper(unAccent(x))
     # stop("Kisbetűs szövegrészletet találtam. Tisztítva van a név?")
   }
 

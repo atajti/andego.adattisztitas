@@ -19,8 +19,8 @@
 #' cleanNames("Sándor József Benedek")
 #' cleanNames("S. József Benedek")
 #' cleanNames("Sándor J. Benedek")
-#' cleanFirms(toupper(unAccent(c("Andego Tanácsadó Korlátolt felelősségű társaság",
-#'                               "Magyar Telekom Nyrt"))))
+#' cleanNames(c("Andego Tanácsadó Korlátolt felelősségű társaság",
+#'              "Magyar Telekom Nyrt"))
 #'
 #' @export
 
