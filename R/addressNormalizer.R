@@ -4,13 +4,19 @@
 #'   címek egységes alakra hozása.
 #'
 #' @param x tisztítandó címeket tartalmazó vektor
+#' @param altenative logikai érték az \code{unAccent}-nek
 #'
 #'
 #' @section TODO:
-#' A városok jelenleg egy lista alapján irányítoszámokból jön létre.
-#'   Mivel egy irányítoszám több elepüléshez tartozik, ez a módszer
+#' A városok jelenleg egy lista alapján irányítoszámokból jönnek létre.
+#'   Mivel egy irányítoszám több elepüléshez tartozhat, ez a módszer
 #'   adatvesztéssel jár. A listát városnév-tisztításra kéne csak
 #'   használni.
+#'
+#' Lehet, érdemes volna egy flag hogy daraboltan vagy paste-elve
+#'   várjuk az eredményt (akkor pedig lista? vagy data.frame? 
+#'   vagy adja meg a user? és bármit megadhasson, vagy csak pár opcó
+#'   legyenn?)
 #'
 #' @return
 #' karakter vektor, \code{x} minden elemére egy javított verzió
@@ -21,10 +27,10 @@
 #' @examples
 #' cimek <- c("8000 Siófok, Ballagó utca 14/a",
 #'            "8000 Siofk, Ballagó utca 14/a 3. em 31.")
-#' addressNormalizer(cimek)
+#' cleanAddress(cimek)
 #' @export
 
-addressNormalizer <- function(x){
+cleanAddress <- function(x, alternative=TRUE){
   irszam <- cleanZip(x)
   varosok <- varosok[which(!duplicated(varosok$postal)),]
   irsz_sorrend <- sapply(irszam,
