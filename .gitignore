@@ -34,3 +34,6 @@ vignettes/*.pdf
 
 # Package data
 /inst/
+
+# Old clean_* functions
+/R/clean_*
