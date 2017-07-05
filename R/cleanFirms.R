@@ -1,9 +1,8 @@
 #' Cégnevek tisztítása
 #'
-#' Nagybetűs, ékezetmentes cégnevekben keres gyakran előforduló elemeket
-#'   a függvény, amiket egységes alakra hoz
+#' A cégneveket egységesíti, pl.: NyRT -> RT
 #'
-#' @param x egyszerű tisztításon átesett karakter vektor
+#' @param x karakter vektor
 #'
 #' @section TODO:
 #' Javítani, finomítani a keresendő mintákat
@@ -25,7 +24,9 @@ cleanFirms <- function(x){
     # stop("Kisbetűs szövegrészletet találtam. Tisztítva van a név?")
   }
 
+  # '&amp; sokszor előkerül:
   clean_firm_vect <- x
+  clean_firm_vect <- gsub("&AMP;", "&", clean_firm_vect, fixed=TRUE)
 
   # KFT
   for(pattern in c("KORLATOLT FELELOSSEGU TARSASAG",
@@ -33,7 +34,7 @@ cleanFirms <- function(x){
     clean_firm_vect[grepl(pattern,
                           clean_firm_vect)] <- gsub(pattern,
                                                     "KFT",
-                                                    x[grepl(pattern,
+                                                    clean_firm_vect[grepl(pattern,
                                                             clean_firm_vect)])
   }
 
@@ -42,7 +43,7 @@ cleanFirms <- function(x){
     clean_firm_vect[grepl(pattern,
                           clean_firm_vect)] <- gsub(pattern,
                                                     "BT",
-                                                    x[grepl(pattern,
+                                                    clean_firm_vect[grepl(pattern,
                                                             clean_firm_vect)])
   }
 
@@ -56,7 +57,7 @@ cleanFirms <- function(x){
     clean_firm_vect[grepl(pattern,
                           clean_firm_vect)] <- gsub(pattern,
                                                     "RT",
-                                                    x[grepl(pattern,
+                                                    clean_firm_vect[grepl(pattern,
                                                             clean_firm_vect)])
   }
 
