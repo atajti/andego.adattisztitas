@@ -17,6 +17,6 @@
 
 
 
-cleanCity <- function(x){
-  return(removeSpecials(removeAllDot(toupper(unAccent(x)))))
+cleanCity <- function(x, alternative=FALSE){
+  return(removeSpecials(removeAllDot(toupper(unAccent(x, alternative)))))
 }

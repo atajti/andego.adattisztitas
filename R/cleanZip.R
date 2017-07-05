@@ -15,6 +15,6 @@
 #'
 #' @export
 
-cleanZip <- function(x){
-  return(removeAllDot(toZipCode(unAccent(toupper(x)))))
+cleanZip <- function(x, alternative=FALSE){
+  return(removeAllDot(toZipCode(unAccent(toupper(x), alternative))))
 }

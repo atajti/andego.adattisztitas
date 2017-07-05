@@ -31,14 +31,16 @@
 #' @export
 
 cleanAddress <- function(x, alternative=TRUE){
-  irszam <- cleanZip(x)
+  irszam <- cleanZip(x,
+                     alternative)
   varosok <- varosok[which(!duplicated(varosok$postal)),]
   irsz_sorrend <- sapply(irszam,
                          function(irsz){
                            which(irsz == varosok$postal)
                          })
   irsz_sorrend[(sapply(irsz_sorrend, length)==0)] <- NA # nem talált irszek NA lesznek
-  varos <- cleanCity(unname(unlist(varosok[unlist(irsz_sorrend), "City"])))
-  street <- cleanStreet(x)
-  return(paste(irszam,varos,street))
+  varos <- cleanCity(unname(unlist(varosok[unlist(irsz_sorrend), "City"])),
+                     alternative)
+  street <- cleanStreet(x, alternative)
+  return(paste(irszam, varos, street, sep=" "))
 }

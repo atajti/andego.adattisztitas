@@ -3,17 +3,20 @@
 #' Megtisztítja a kapott irányítószámokat potenciális problémáktól.
 #'
 #' @param x karakter vektor
+#' @param alternative unAccent használatát szabályzó logikai érték
+#'
+#' Az \code{unAccent} alapvetően az \code{iconv} függvényt használja.
+#'   Ez az operácoós rendszer kódolását veszi alapul, így ha
+#'   \code{Encoding(x)) nem ugyan az, mint ami az operációs rendszerből
+#'   következik, hibás eredményt adhat; erre az esetre használható
+#'   az \code{alternative} flag, lásd \code{\link{unAccent}}
 #'
 #' @section TODO:
 #' Jelenleg a gyakori hibás utcanevek a kódba vannak égetve,
 #'   ezt később érdemes volna modulárisan cserélhetővé tenni.
 #'
-#' Jelenleg az \code{unAccent(x, alternative=TRUE)} van használatban,
-#'   mivel az \code{iconv} a rendszer kódolását, és nem a sztring
-#'   kódolását veszi alapul
-#'
 #' @return
-#' \code{x}-nel azonos hosszú karakter vektor
+#' \code{x}-szelel azonos hosszú karakter vektor
 #'
 #' @author
 #' Hajdú László
@@ -25,7 +28,7 @@
 #' @importFrom stringr str_extract
 
 
-cleanStreet <- function(x){
+cleanStreet <- function(x, alternative=FALSE){
 
   STREET2 <- c("MARCIUS 15"="MARCIUS15",
                "MARC. 15"="MARCIUS15",
@@ -144,16 +147,16 @@ cleanStreet <- function(x){
                "SZENT ROKUS"="SZENTROKUS",
                "SZENT SEBESTYEN"="SZENTSEBESTYEN")
 
-  x <- unAccent(x, T)
-  x <- toupper(x)
-  x <- trimws(x)
   #kitöröljük az irányítószámot a stringből
-  x <- sub("\\b[0-9]{4}\\b","",x)
+  x <- sub("\\b[0-9]{4}\\b", "",
+           toupper(unAccent(x, alternative)))
+
   #a házszám a következő szám lesz
   hnumber <- str_extract(x,"\\d+")
   #ha nem találtuk meg ne fűzzünk hozzá NA-t a címhez
   hnumber[which(is.na(hnumber))] <- ""
   #a STREET2 -ben található key-eket cseréli a value-ra
+
   for(i in seq_along(STREET2)){
     value <- STREET2[i]
     key <- names(value)
@@ -164,12 +167,12 @@ cleanStreet <- function(x){
   }
   
   
-  x <- removeSpecials(x)
   #1 vagy több whitespaceket kicseréli ; karakterre
-  x <- gsub("\\s{1,}",";",x)
+  x <- gsub("\\s{1,}", ";",
+            removeSpecials(x))
   #splitelem az így kapott stringet aztán a 3. helyen lévő szó lesz az utca
-  delimited <- strsplit(x,";")
+  delimited <- strsplit(x, ";")
   street <- sapply(delimited, "[", 3)
   
-  return(paste(street,hnumber))
+  return(paste(street,hnumber, sep=" "))
 }
