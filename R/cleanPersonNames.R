@@ -5,13 +5,9 @@
 #' @param x karakter vektor, megtisztítandó személynevekkel
 #'
 #' @details
-#' Alapvetően vezetéknévre és keresztnévre bontjuk a neveket.
-#' Ha van középs név, azt az első betűre redukáljuk (Kiss Sándor József
-#'   -> Kiss S József'), kivétel, ha az első név egy vagy két betűből
-#'   áll - ekkor a középső nevet teljesen meghagyjuk (N Nagy Nándor)
-#'
-#' Ez msot átalakult azzá, hogy az első két név, kivétel ha az első
-#'   csak egy-két karakter, mert akkor az első három szó lesz megtartva.'
+#' A nevej első két tagja marad meg, kivétel, ha az első tag tisztított
+#'   formában max 2 karakter hosszú (ld. példa), akkor az első három
+#'   tag marad meg.
 #'
 #' @section TODO:
 #' Egyrészt karaktereket és nem betűket különböztetünk meg, Szabó Sz
