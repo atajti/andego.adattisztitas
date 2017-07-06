@@ -5,6 +5,7 @@
 #' @param x karakter vektor
 #' @param alternative unAccent használatát szabályzó logikai érték
 #'
+#' @details
 #' Az \code{unAccent} alapvetően az \code{iconv} függvényt használja.
 #'   Ez az operácoós rendszer kódolását veszi alapul, így ha
 #'   \code{Encoding(x)) nem ugyan az, mint ami az operációs rendszerből
@@ -12,6 +13,10 @@
 #'   az \code{alternative} flag, lásd \code{\link{unAccent}}
 #'
 #' @section TODO:
+#' jelenleg csak szabályos, teljes címekre működik, csak címekre nem;
+#' pl.: \code{cleanStreet("1000 Budapest, Clark Ádám tér 3")} működik,
+#'   de \code{cleanStreet(Clark Ádám tér 3)} nem.
+#'
 #' Jelenleg a gyakori hibás utcanevek a kódba vannak égetve,
 #'   ezt később érdemes volna modulárisan cserélhetővé tenni.
 #'
@@ -152,7 +157,7 @@ cleanStreet <- function(x, alternative=FALSE){
            toupper(unAccent(x, alternative)))
 
   #a házszám a következő szám lesz
-  hnumber <- str_extract(x,"\\d+")
+  hnumber <- stringr::str_extract(x,"\\d+")
   #ha nem találtuk meg ne fűzzünk hozzá NA-t a címhez
   hnumber[which(is.na(hnumber))] <- ""
   #a STREET2 -ben található key-eket cseréli a value-ra
@@ -173,6 +178,8 @@ cleanStreet <- function(x, alternative=FALSE){
   #splitelem az így kapott stringet aztán a 3. helyen lévő szó lesz az utca
   delimited <- strsplit(x, ";")
   street <- sapply(delimited, "[", 3)
-  
-  return(paste(street,hnumber, sep=" "))
+  res <- trimws(paste(street,hnumber, sep=" "))
+  res[res=="NA"] <- NA
+  return(res)
 }
+
