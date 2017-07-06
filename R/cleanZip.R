@@ -3,6 +3,7 @@
 #' Megtisztítja a kapott irányítószámokat potenciális problémáktól.
 #'
 #' @param x karakter vektor
+#' @param alternative logikai érték, ld. unAccent
 #'
 #' @return
 #' \code{x}-nel azonos hosszú karakter vektor

@@ -16,10 +16,9 @@ karakter vektor, a tisztított nevekkel
 Személynevek egységes alapkra hozása
 }
 \details{
-Alapvetően vezetéknévre és keresztnévre bontjuk a neveket.
-Ha van középs név, azt az első betűre redukáljuk (Kiss Sándor József
-  -> Kiss S József'), kivétel, ha az első név egy vagy két betűből
-  áll - ekkor a középső nevet teljesen meghagyjuk (N Nagy Nándor)
+A nevej első két tagja marad meg, kivétel, ha az első tag tisztított
+  formában max 2 karakter hosszú (ld. példa), akkor az első három
+  tag marad meg.
 }
 \section{TODO}{
 

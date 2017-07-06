@@ -4,25 +4,34 @@
 \alias{cleanStreet}
 \title{Utcanevek tisztítása}
 \usage{
-cleanStreet(x)
+cleanStreet(x, alternative = FALSE)
 }
 \arguments{
 \item{x}{karakter vektor}
+
+\item{alternative}{unAccent használatát szabályzó logikai érték}
 }
 \value{
-\code{x}-nel azonos hosszú karakter vektor
+\code{x}-szel azonos hosszú karakter vektor
 }
 \description{
 Megtisztítja a kapott irányítószámokat potenciális problémáktól.
 }
+\details{
+Az \code{unAccent} alapvetően az \code{iconv} függvényt használja.
+  Ez az operácoós rendszer kódolását veszi alapul, így ha
+  \code{Encoding(x)} nem ugyan az, mint ami az operációs rendszerből
+  következik, hibás eredményt adhat; erre az esetre használható
+  az \code{alternative} flag, lásd \code{\link{unAccent}}
+}
 \section{TODO}{
+
+jelenleg csak szabályos, teljes címekre működik, csak címekre nem;
+pl.: \code{cleanStreet("1000 Budapest, Clark Ádám tér 3")} működik,
+  de \code{cleanStreet(Clark Ádám tér 3)} nem.
 
 Jelenleg a gyakori hibás utcanevek a kódba vannak égetve,
   ezt később érdemes volna modulárisan cserélhetővé tenni.
-
-Jelenleg az \code{unAccent(x, alternative=TRUE)} van használatban,
-  mivel az \code{iconv} a rendszer kódolását, és nem a sztring
-  kódolását veszi alapul
 }
 \examples{
 cleanStreet(" 3120 Dorgalfalva, Kossuth utca 10.")

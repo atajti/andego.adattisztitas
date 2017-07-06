@@ -4,10 +4,12 @@
 \alias{cleanCity}
 \title{Irányítószám tisztítása}
 \usage{
-cleanCity(x)
+cleanCity(x, alternative = FALSE)
 }
 \arguments{
 \item{x}{karakter vektor}
+
+\item{alternative}{logikai érték, ld. unAccent}
 }
 \value{
 \code{x}-nel azonos hosszú karakter vektor

@@ -8,7 +8,7 @@
 #' @details
 #' Az \code{unAccent} alapvetően az \code{iconv} függvényt használja.
 #'   Ez az operácoós rendszer kódolását veszi alapul, így ha
-#'   \code{Encoding(x)) nem ugyan az, mint ami az operációs rendszerből
+#'   \code{Encoding(x)} nem ugyan az, mint ami az operációs rendszerből
 #'   következik, hibás eredményt adhat; erre az esetre használható
 #'   az \code{alternative} flag, lásd \code{\link{unAccent}}
 #'
@@ -21,7 +21,7 @@
 #'   ezt később érdemes volna modulárisan cserélhetővé tenni.
 #'
 #' @return
-#' \code{x}-szelel azonos hosszú karakter vektor
+#' \code{x}-szel azonos hosszú karakter vektor
 #'
 #' @author
 #' Hajdú László

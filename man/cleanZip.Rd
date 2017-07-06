@@ -4,10 +4,12 @@
 \alias{cleanZip}
 \title{Irányítószám tisztítása}
 \usage{
-cleanZip(x)
+cleanZip(x, alternative = FALSE)
 }
 \arguments{
 \item{x}{karakter vektor}
+
+\item{alternative}{logikai érték, ld. unAccent}
 }
 \value{
 \code{x}-nel azonos hosszú karakter vektor

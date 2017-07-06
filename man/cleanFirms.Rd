@@ -7,19 +7,18 @@
 cleanFirms(x)
 }
 \arguments{
-\item{x}{egyszerű tisztításon átesett karakter vektor}
+\item{x}{karakter vektor}
 }
 \description{
-Nagybetűs, ékezetmentes cégnevekben keres gyakran előforduló elemeket
-  a függvény, amiket egységes alakra hoz
+A cégneveket egységesíti, pl.: NyRT -> RT
 }
 \section{TODO}{
 
 Javítani, finomítani a keresendő mintákat
 }
 \examples{
-cleanFirms(toupper(unAccent(c("Andego Tanácsadó Korlátolt felelősségű társaság",
-                              "Magyar Telekom Nyrt"))))
+cleanFirms(c("Andego Tanácsadó Korlátolt felelősségű társaság",
+             "Magyar Telekom Nyrt"))
 
 }
 \author{
