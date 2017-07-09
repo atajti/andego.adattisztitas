@@ -1,6 +1,6 @@
 Package: andego.adattisztitas
 Title: Alapvető adattisztítási feladatok magyarul
-Version: 0.0.1.9002
+Version: 0.0.2.0000
 Author: Andras Tajti, Laszlo Hajdu
 Maintainer: Andras Tajti <atajti@andego.hu>
 Description: Magyar adatok tisztítasa - név, cím (irányítószám, település, utca), alapvető sztringtisztítások.
