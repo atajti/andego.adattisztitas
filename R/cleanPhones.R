@@ -34,7 +34,7 @@ cleanPhones <- function(chr_vect){
   # 7-nél rövidebbek
   if(any(nchar(chr_vect_mod)<7 & !is.na(chr_vect_mod) & !(chr_vect_mod==""))){
 
-    warning(paste0("Rövid számot találtam, az első: ",
+    warning(paste0("R\u00F6vid sz\u00E1mot tal\u00E1ltam, az els\u0151: ",
                    min(which(nchar(chr_vect_mod)<7))))
 
     chr_vect_mod[nchar(chr_vect_mod)<7] <- NA
@@ -42,7 +42,7 @@ cleanPhones <- function(chr_vect){
   # üres cellák keresése
   if(any(sapply(chr_vect_mod=="", isTRUE))){
 
-    warning(paste0("Üres mező, az első: ",
+    warning(paste0("\u0170res mez\u0151, az els\u0151: ",
                    min(which(chr_vect_mod==""))))
 
     chr_vect_mod[chr_vect_mod==""] <- NA

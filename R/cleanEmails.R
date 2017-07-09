@@ -7,7 +7,7 @@
 #'
 #' @details
 #' A függvény jelenleg egy \code{grepl}-hívásból áll. Találtunk duplikált
-#'   is, ennek detektálása a két \code{@} és \code {.}, vagy hogy minden
+#'   is, ennek detektálása a két \code{@} és \code{.}, vagy hogy minden
 #'   előfordulásának száma páros. Fel lehet később turbózni, hogy
 #'   létező internetkapcsolat esetén ellenőrizze hogy létező top level
 #'   domain-nel rendelkezik-e a cím.
