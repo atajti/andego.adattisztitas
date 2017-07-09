@@ -1,7 +1,7 @@
 #' Számok és betűk megtartása
 #' 
-#' Minden karaktert töröl, ami nem szám, vagy nem tartozik bele az
-#' ASCII ABC-be
+#' Minden karaktert töröl, ami nem szám, vagy nem betű (a betű
+#'   \code{:alpha:} értelmében, ld. \code{?regex})
 #'
 #' @param x karakter vektor
 #'
@@ -24,5 +24,5 @@
 
 
 toAlphaAndDigits <- function(x){
-  return(gsub("[0-9]","",x))
+  return(gsub("[^[:alnum:]]","",x))
 }
