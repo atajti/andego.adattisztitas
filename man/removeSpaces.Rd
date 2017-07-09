@@ -13,7 +13,7 @@ removeSpaces(x)
 \code{x}-szel megegyező hosszú karakter vektor
 }
 \description{
-Ha több mint egy sortörés, tab, kocsivissza vagy szóköz kön egymás
+Ha több mint egy sortörés, tab, kocsivissza vagy szóköz jön egymás
 után, egyetlen szóközre cseréli, illetve a szöveg eleji és végi
 szóközöket is eltüntetni.
 }

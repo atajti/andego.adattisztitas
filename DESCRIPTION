@@ -3,7 +3,7 @@ Title: Alapvető adattisztítási feladatok magyarul
 Version: 0.0.1.9002
 Author: Andras Tajti, Laszlo Hajdu
 Maintainer: Andras Tajti <atajti@andego.hu>
-Description: Magyar adatok tisztítása: név, cím (irányítószám, település, utca), alapvető sztringtisztítások 
+Description: Magyar adatok tisztítasa - név, cím (irányítószám, település, utca), alapvető sztringtisztítások.
 Depends:
     R (>= 3.3.3),
     stringr

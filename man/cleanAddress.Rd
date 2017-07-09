@@ -9,7 +9,7 @@ cleanAddress(x, alternative = TRUE)
 \arguments{
 \item{x}{tisztítandó címeket tartalmazó vektor}
 
-\item{altenative}{logikai érték az \code{unAccent}-nek}
+\item{alternative}{logikai érték az \code{unAccent}-nek}
 }
 \value{
 karakter vektor, \code{x} minden elemére egy javított verzió

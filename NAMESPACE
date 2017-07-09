@@ -2,9 +2,11 @@
 
 export(cleanAddress)
 export(cleanCity)
+export(cleanEmails)
 export(cleanFirms)
 export(cleanNames)
 export(cleanPersonNames)
+export(cleanPhones)
 export(cleanStreet)
 export(cleanZip)
 export(detectFirms)

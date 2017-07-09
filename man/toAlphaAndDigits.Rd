@@ -13,8 +13,8 @@ toAlphaAndDigits(x)
 \code{x}-szel megegyező hosszú karakter vektor
 }
 \description{
-Minden karaktert töröl, ami nem szám, vagy nem tartozik bele az
-ASCII ABC-be
+Minden karaktert töröl, ami nem szám, vagy nem betű (a betű
+  \code{:alpha:} értelmében, ld. \code{?regex})
 }
 \details{
 \code{gsub("[0-9]","",x)}
