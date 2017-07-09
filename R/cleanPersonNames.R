@@ -54,7 +54,7 @@ cleanPersonNames <- function(x){
 }
 
 removePrefixes <- function(x) {
-  elo = "(dr|med|mvdr|mudr|phd|phdr|csc|dsc|rndr|judr|mgr|id|idõsebb|ifj|ijf|ifjabb|\u00F6zv|\u00F6zvegy|kk)"
+  elo = "(dr|med|mvdr|mudr|phd|phdr|csc|dsc|rndr|judr|mgr|id|id\u0151sebb|ifj|ijf|ifjabb|\u00F6zv|\u00F6zvegy|kk)"
   elo = paste("^", elo, "((\\.)|(\\s)+)|(\\s)+", elo, "((\\.)|(\\s)+)|(\\s)+", 
       elo, "$", sep = "")
   i = 0

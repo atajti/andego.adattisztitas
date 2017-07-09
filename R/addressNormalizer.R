@@ -4,7 +4,7 @@
 #'   címek egységes alakra hozása.
 #'
 #' @param x tisztítandó címeket tartalmazó vektor
-#' @param altenative logikai érték az \code{unAccent}-nek
+#' @param alternative logikai érték az \code{unAccent}-nek
 #'
 #'
 #' @section TODO:
