@@ -2,6 +2,7 @@
 
 export(cleanAddress)
 export(cleanCity)
+export(cleanDates)
 export(cleanEmails)
 export(cleanFirms)
 export(cleanNames)
