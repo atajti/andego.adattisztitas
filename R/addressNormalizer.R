@@ -30,7 +30,7 @@
 #' cleanAddress(cimek)
 #' @export
 
-cleanAddress <- function(x, alternative=TRUE){
+cleanAddress <- function(x, alternative = TRUE){
   irszam <- cleanZip(x,
                      alternative)
   varosok <- varosok[which(!duplicated(varosok$postal)),]
@@ -38,7 +38,7 @@ cleanAddress <- function(x, alternative=TRUE){
                          function(irsz){
                            which(irsz == varosok$postal)
                          })
-  irsz_sorrend[(sapply(irsz_sorrend, length)==0)] <- NA # nem talált irszek NA lesznek
+  irsz_sorrend[(sapply(irsz_sorrend, length) == 0)] <- NA # nem talált irszek NA lesznek
   varos <- cleanCity(unname(unlist(varosok[unlist(irsz_sorrend), "City"])),
                      alternative)
   street <- cleanStreet(x, alternative)

@@ -26,7 +26,7 @@
 #' @export
 
 
-cleanDates <- function(chr_vect, correct_yy_flag=TRUE){
+cleanDates <- function(chr_vect, correct_yy_flag = TRUE){
 
   date_vect <- rep(NA_character_, length(chr_vect))
 
@@ -73,14 +73,14 @@ cleanDates <- function(chr_vect, correct_yy_flag=TRUE){
                                                            chr_vect_mod)],
                                             substr(YYYY_MM_DD,
                                               0,
-                                              nchar(YYYY_MM_DD)-2))
+                                              nchar(YYYY_MM_DD) - 2))
 
   # YYYYMMDD
   corrected_yyyymmdd <- str_extract(chr_vect_mod[grepl(YYYYMMDD,
                                                            chr_vect_mod)],
                                             substr(YYYYMMDD,
                                               0,
-                                              nchar(YYYYMMDD)-2))
+                                              nchar(YYYYMMDD) - 2))
   corrected_yyyymmdd <- paste0(substr(corrected_yyyymmdd, 0, 4),
                                "-",
                                substr(corrected_yyyymmdd, 5, 6),
@@ -95,7 +95,7 @@ cleanDates <- function(chr_vect, correct_yy_flag=TRUE){
                                                                chr_vect_mod)],
                                                 substr(YYYY._MM._DD,
                                                   0,
-                                                  nchar(YYYY._MM._DD)-2))
+                                                  nchar(YYYY._MM._DD) - 2))
   corrected_yyyy._mm._dd <- paste0(substr(corrected_yyyy._mm._dd, 0, 4),
                                    "-",
                                    substr(corrected_yyyy._mm._dd, 7, 8),

@@ -24,5 +24,5 @@
 
 
 toAlphaAndDigits <- function(x){
-  return(gsub("[^[:alnum:]]","",x))
+  return(gsub("[^[:alnum:]]", "", x))
 }

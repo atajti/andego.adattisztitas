@@ -21,5 +21,5 @@
 #' @export
 
 toZipCode <- function(x){
-  return(str_extract(x,"\\b[0-9]{4}\\b"))
+  return(str_extract(x, "\\b[0-9]{4}\\b"))
 }
