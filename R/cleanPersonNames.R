@@ -37,9 +37,9 @@ cleanPersonNames <- function(x){
          split=" ")
 
   tiszta_x <- lapply(x_split, function(darabolt_nev){
-    if(length(darabolt_nev)>2 & !(nchar(darabolt_nev[1])<3)){
+    if(length(darabolt_nev) > 2 & !(nchar(darabolt_nev[1]) < 3)){
       darabolt_nev <- darabolt_nev[1:2]
-    } else if(length(darabolt_nev)>2 & (nchar(darabolt_nev[1])<3)){
+    } else if(length(darabolt_nev) > 2 & (nchar(darabolt_nev[1]) < 3)){
       darabolt_nev <- darabolt_nev[1:3]
     }
     darabolt_nev})
@@ -54,7 +54,7 @@ cleanPersonNames <- function(x){
 }
 
 removePrefixes <- function(x) {
-  elo = "(dr|med|mvdr|mudr|phd|phdr|csc|dsc|rndr|judr|mgr|id|id\u0151sebb|ifj|ijf|ifjabb|\u00F6zv|\u00F6zvegy|kk)"
+  elo = "(dr|med|mvdr|mudr|phd|phdr|csc|dsc|rndr|judr|mgr|id|id\u0151sebb|ifj|ijf|ifjabb|\u00F6zv|\u00F6zvegy|kk|masmunkavallalo|igazgatosagi tag)"
   elo = paste("^", elo, "((\\.)|(\\s)+)|(\\s)+", elo, "((\\.)|(\\s)+)|(\\s)+", 
       elo, "$", sep = "")
   i = 0
