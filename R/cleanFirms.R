@@ -47,6 +47,15 @@ cleanFirms <- function(x){
                                                             clean_firm_vect)])
   }
 
+  # KHT
+  for(pattern in c("KOZHASZNU TARSASAG")){
+    clean_firm_vect[grepl(pattern,
+                          clean_firm_vect)] <- gsub(pattern,
+                                                    "KHT",
+                                                    clean_firm_vect[grepl(pattern,
+                                                            clean_firm_vect)])
+  }
+
   # RT
   for(pattern in c("ZRT", "NYRT",
                    "ZARTKORUEN MUKODO RESZVENYTARSASAG",
