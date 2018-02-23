@@ -25,4 +25,3 @@ removeAllDot("Az ellipszis argumentum: ...")
 \author{
 Hajdu László
 }
-

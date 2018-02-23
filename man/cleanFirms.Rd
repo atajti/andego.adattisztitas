@@ -16,6 +16,7 @@ A cégneveket egységesíti, pl.: NyRT -> RT
 
 Javítani, finomítani a keresendő mintákat
 }
+
 \examples{
 cleanFirms(c("Andego Tanácsadó Korlátolt felelősségű társaság",
              "Magyar Telekom Nyrt"))
@@ -24,4 +25,3 @@ cleanFirms(c("Andego Tanácsadó Korlátolt felelősségű társaság",
 \author{
 András Tajti <atajti@andego.hu>
 }
-

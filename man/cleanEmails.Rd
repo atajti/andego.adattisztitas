@@ -30,4 +30,3 @@ cleanEmails("vmi@email.cim")
 \author{
 Tomasovszky Álmos
 }
-

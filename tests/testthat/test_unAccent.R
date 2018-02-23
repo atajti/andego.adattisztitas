@@ -1,4 +1,4 @@
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 context("unAccent")
 
 test_that("unAccent works for HUN letters in standard mode", {
@@ -93,7 +93,8 @@ test_that("NA and others converts to character as expected", {
   expect_equal(unAccent(NA), NA_character_)
   expect_identical(unAccent(c("á", NA)),
                    c("a", NA_character_))
-  expect_equal(unAccent(NA, TRUE), NA_character_)
+  expect_equal(unAccent(NA, TRUE),
+               NA_character_)
   expect_identical(unAccent(c("á", NA), TRUE),
                    c("a", NA_character_))
 

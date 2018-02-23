@@ -30,6 +30,7 @@ Lehet, érdemes volna egy flag hogy daraboltan vagy paste-elve
   vagy adja meg a user? és bármit megadhasson, vagy csak pár opcó
   legyenn?)
 }
+
 \examples{
 cimek <- c("8000 Siófok, Ballagó utca 14/a",
            "8000 Siofk, Ballagó utca 14/a 3. em 31.")
@@ -38,4 +39,3 @@ cleanAddress(cimek)
 \author{
 Hajdú László
 }
-

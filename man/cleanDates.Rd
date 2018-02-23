@@ -33,4 +33,3 @@ cleanDates("56-10-23")
 \author{
 Tajti András
 }
-

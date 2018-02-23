@@ -27,4 +27,3 @@ toZipCode(cimek)
 \author{
 Hajdu László
 }
-

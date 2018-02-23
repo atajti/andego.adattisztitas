@@ -20,7 +20,8 @@ Az ékezetes karaktereket (pl á,é,í) ékezet nélkülire cseréli (a,e,i).
 }
 \details{
 Az ékezet eltávolítását az \code{iconv(x, from="", to="ASCII//TRANSLIT")}
-  függvény csinálja.
+  függvény csinálja. 
+A \code{factor} változókat feldolgozás előtt karakterré alakítja
 }
 \examples{
 unAccent("Árvíztűrő tükörfúrógép")
@@ -28,6 +29,5 @@ unAccent("Árvíztűrő tükörfúrógép", TRUE)
 
 }
 \author{
-Hajdú László
+Hajdú László, Tajti András
 }
-

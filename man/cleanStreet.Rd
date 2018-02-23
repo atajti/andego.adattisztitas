@@ -33,6 +33,7 @@ pl.: \code{cleanStreet("1000 Budapest, Clark Ádám tér 3")} működik,
 Jelenleg a gyakori hibás utcanevek a kódba vannak égetve,
   ezt később érdemes volna modulárisan cserélhetővé tenni.
 }
+
 \examples{
 cleanStreet(" 3120 Dorgalfalva, Kossuth utca 10.")
 
@@ -40,4 +41,3 @@ cleanStreet(" 3120 Dorgalfalva, Kossuth utca 10.")
 \author{
 Hajdú László
 }
-

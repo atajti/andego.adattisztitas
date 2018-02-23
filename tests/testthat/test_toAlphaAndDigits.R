@@ -1,4 +1,4 @@
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 context("toAlphaAndDigits")
 
 test_that("hosszok_egyeznek",{

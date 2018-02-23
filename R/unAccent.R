@@ -9,12 +9,13 @@
 #' @details
 #' Az ékezet eltávolítását az \code{iconv(x, from="", to="ASCII//TRANSLIT")}
 #'   függvény csinálja. 
+#' A \code{factor} változókat feldolgozás előtt karakterré alakítja
 #'
 #' @return
 #'   \code{x}-szel egyező hosszú karakter vektor, ékezetek nélkül.
 #'
 #' @author
-#' Hajdú László
+#' Hajdú László, Tajti András
 #'
 #' @examples
 #' unAccent("Árvíztűrő tükörfúrógép")
@@ -23,8 +24,25 @@
 #' @export
 
 unAccent <- function(x, alternative = FALSE){
+  
+  if(is.factor(x)){
+    x <- as.character(x)
+  }
+  
   if(!alternative){
-    return(iconv(x, from = "", to = "ASCII//TRANSLIT"))
+    encs <- if(is.character(x)){
+              Encoding(x)
+            } else {
+              rep(NA_character_, length(x))
+            }
+
+    encs[encs == "unknown" | is.na(encs)] <- "ASCII"
+    iconved <- mapply(iconv,
+                     from = encs,
+                     x = x,
+                     MoreArgs = list(to = "ASCII//TRANSLIT"))
+    return(unname(iconved))
+  
   } else {
     x <- gsub("\u00E0", "a", x)
     x <- gsub("\u00E1", "a", x)

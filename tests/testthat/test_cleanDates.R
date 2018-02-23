@@ -1,4 +1,4 @@
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 context("cleanDates")
 
 test_that("hosszok_egyeznek",{

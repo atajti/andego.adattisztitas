@@ -1,4 +1,4 @@
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 context("cleanEmails")
 
 test_that("hosszok_egyeznek",{

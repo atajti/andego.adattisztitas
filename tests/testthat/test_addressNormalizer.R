@@ -1,4 +1,4 @@
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 context("címtisztítás")
 
 test_that("ékezetes városnevek", {

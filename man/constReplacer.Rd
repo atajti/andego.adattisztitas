@@ -22,4 +22,3 @@ Csak eszköz, valójában egy \code{gsub}-hívás.
 \author{
 Hajdú László
 }
-

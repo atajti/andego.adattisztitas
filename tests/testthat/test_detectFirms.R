@@ -1,4 +1,4 @@
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 context("cégdetektálás")
 
 test_that("példa működik", {

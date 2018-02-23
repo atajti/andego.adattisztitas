@@ -1,4 +1,4 @@
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 context("cleanNames")
 
 test_that("cégek megtisztulnak", {

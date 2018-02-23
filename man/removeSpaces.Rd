@@ -25,6 +25,7 @@ szóközöket is eltüntetni.
 A cél az lenne, hogy minden whitespace-t csak egy space-re
 cseréljünk?
 }
+
 \examples{
 removeSpaces("Az ellipszis argumentum: ...")
 
@@ -32,4 +33,3 @@ removeSpaces("Az ellipszis argumentum: ...")
 \author{
 Hajdu László
 }
-

@@ -1,4 +1,4 @@
 library(testthat)
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 
-test_check("andego.adattisztitas")
+test_check("data.cleaning.HU")

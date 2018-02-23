@@ -20,6 +20,7 @@ Nagybetűs, ékezetmentes nevekben keres gyakran előforduló elemeket
 
 Javítani, finomítani a keresendő mintákat
 }
+
 \examples{
 cleanFirms(toupper(unAccent(c("Andego Tanácsadó Korlátolt felelősségű társaság",
                               "Magyar Telekom Nyrt",
@@ -28,4 +29,3 @@ cleanFirms(toupper(unAccent(c("Andego Tanácsadó Korlátolt felelősségű tár
 \author{
 András Tajti <atajti@andego.hu>
 }
-

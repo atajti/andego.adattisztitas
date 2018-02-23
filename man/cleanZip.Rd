@@ -24,4 +24,3 @@ cleanZip(" 3120 Dorgalfalva, Kossuth utca 10.")
 \author{
 Hajdú László
 }
-

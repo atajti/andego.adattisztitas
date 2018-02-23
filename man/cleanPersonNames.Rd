@@ -26,6 +26,7 @@ Egyrészt karaktereket és nem betűket különböztetünk meg, Szabó Sz
   Balázs -> Szabó S Balázs, másrészt római számokat is érdemes
   lesz figyelni később: II. Rákóczi Ferenc -> I Rákóczi Ferenc
 }
+
 \examples{
 cleanPersonNames("Sándor József Benedek")
 cleanPersonNames("S. József Benedek")
@@ -35,4 +36,3 @@ cleanPersonNames("Sándor J. Benedek")
 \author{
 Tajti András <atajti@andego.hu>
 }
-

@@ -31,4 +31,3 @@ cleanNames(c("Andego Tanácsadó Korlátolt felelősségű társaság",
 \author{
 Tajti András <atajti@andego.hu>
 }
-

@@ -25,4 +25,3 @@ removeSpecials("Uj\\nsor")
 \author{
 Hajdu László
 }
-

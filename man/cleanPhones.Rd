@@ -26,6 +26,7 @@ Internacionalizálás: egy \code{lang} argumentum, ami ha meg van adva,
   megkeresné a \code{paste0(cleanPhones_*lang*)} függvényt, és annak
   a vektort.
 }
+
 \examples{
 cleanPhones("+36 (30) 1010101")
 
@@ -33,4 +34,3 @@ cleanPhones("+36 (30) 1010101")
 \author{
 Tomasovszky Álmos
 }
-
