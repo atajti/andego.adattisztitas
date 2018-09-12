@@ -11,7 +11,7 @@ test_that("hosszok_egyeznek",{
                2)
   })
 
-test_that("NA-k a helyükön vannak", {
+test_that("NA-k a hely\u00FCk\u00F6n vannak", {
   expect_equal(which(is.na(cleanDates(NA))),
                1)
   expect_equal(which(is.na(cleanDates(c("2017. 07. 10",
@@ -23,7 +23,7 @@ test_that("NA-k a helyükön vannak", {
                c(1, 3))
   })
 
-test_that("működik a példa", {
+test_that("m\u0171k\u00F6dik a p\u00E9lda", {
   expect_equal(cleanDates("56-10-23"),
                as.Date("1956-10-23"))
   })

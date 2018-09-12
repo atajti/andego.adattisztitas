@@ -11,7 +11,7 @@ test_that("hosszok_egyeznek",{
                2)
   })
 
-test_that("NA-k a helyükön vannak", {
+test_that("NA-k a hely\u00FCk\u00F6n vannak", {
   expect_equal(which(is.na(cleanEmails(NA))),
                1)
   expect_equal(which(is.na(cleanEmails(c("vmi@email.cim",
@@ -23,7 +23,7 @@ test_that("NA-k a helyükön vannak", {
                c(1, 3))
   })
 
-test_that("működik a példa", {
+test_that("m\u0171k\u00F6dik a p\u00E9lda", {
   expect_equal(cleanEmails("vmi@email.cim"),
                "vmi@email.cim")
   })
