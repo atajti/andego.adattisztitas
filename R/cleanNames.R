@@ -22,6 +22,7 @@
 #' cleanNames(c("Andego Tanácsadó Korlátolt felelősségű társaság",
 #'              "Magyar Telekom Nyrt"))
 #'
+#' @encoding UTF-8
 #' @export
 
 cleanNames <- function(x){

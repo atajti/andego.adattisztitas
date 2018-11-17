@@ -18,6 +18,7 @@
 #' @return
 #' logikai vektor, TRUE ha cég, FALSE ha személy.
 #'
+#' @encoding UTF-8
 #' @export
 
 detectFirms <-

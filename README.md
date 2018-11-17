@@ -1,4 +1,4 @@
-# andego.adattisztitas
+# data.cleaning.HU
 
 > adattisztítás magyar nyelven
 
@@ -11,13 +11,13 @@ Az egyes függvények folyamatosan frissülni fognak az újabb különleges eset
 ## Telepítés
 
 ```r
-devtools::install_github("atajti/andego.adattisztitas")
+devtools::install_github("atajti/data.cleaning.HU")
 ```
 
 ## Betöltés
 
 ```r
-library(andego.adattisztitas)
+library(data.cleaning.HU)
 ```
 
 

@@ -14,6 +14,7 @@
 #' @examples
 #' cleanZip(" 3120 Dorgalfalva, Kossuth utca 10.")
 #'
+#' @encoding UTF-8
 #' @export
 
 

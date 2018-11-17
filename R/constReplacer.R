@@ -11,7 +11,7 @@
 #'
 #' @author
 #' Hajdú László
-
+#' @encoding UTF-8
 
 
 constReplacer <- function(regkif,csere,min){

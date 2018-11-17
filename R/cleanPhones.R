@@ -23,6 +23,7 @@
 #' @examples
 #' cleanPhones("+36 (30) 1010101")
 #'
+#' @encoding UTF-8
 #' @export
 
 

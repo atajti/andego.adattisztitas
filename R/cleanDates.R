@@ -23,6 +23,7 @@
 #' @examples
 #' cleanDates("56-10-23")
 #'
+#' @encoding UTF-8
 #' @export
 
 

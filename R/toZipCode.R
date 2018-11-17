@@ -18,6 +18,7 @@
 #'            "8000 Siofk, Ballagó utca 14/a 3. em 31.")
 #' toZipCode(cimek)
 #'
+#' @encoding UTF-8
 #' @export
 
 toZipCode <- function(x){

@@ -22,6 +22,7 @@
 #' @examples
 #' removeSpaces("Az ellipszis argumentum: ...")
 #'
+#' @encoding UTF-8
 #' @export
 
 

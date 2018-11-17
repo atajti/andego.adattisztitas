@@ -30,6 +30,7 @@
 #' cleanStreet(" 3120 Dorgalfalva, Kossuth utca 10.")
 #'
 #' @export
+#' @encoding UTF-8
 #' @importFrom stringr str_extract
 
 

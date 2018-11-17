@@ -16,6 +16,7 @@
 #' @examples
 #' removeSpecials("Uj\nsor")
 #'
+#' @encoding UTF-8
 #' @export
 
 removeSpecials <- function(x){

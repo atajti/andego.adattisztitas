@@ -9,14 +9,14 @@
 #'
 #' @section TODO:
 #' A városok jelenleg egy lista alapján irányítoszámokból jönnek létre.
-#'   Mivel egy irányítoszám több elepüléshez tartozhat, ez a módszer
+#'   Mivel egy irányítoszám több településhez tartozhat, ez a módszer
 #'   adatvesztéssel jár. A listát városnév-tisztításra kéne csak
 #'   használni.
 #'
 #' Lehet, érdemes volna egy flag hogy daraboltan vagy paste-elve
-#'   várjuk az eredményt (akkor pedig lista? vagy data.frame? 
+#'   várjuk az eredményt (akkor pedig lista? vagy data.frame?
 #'   vagy adja meg a user? és bármit megadhasson, vagy csak pár opcó
-#'   legyenn?)
+#'   legyen?)
 #'
 #' @return
 #' karakter vektor, \code{x} minden elemére egy javított verzió
@@ -28,9 +28,10 @@
 #' cimek <- c("8000 Siófok, Ballagó utca 14/a",
 #'            "8000 Siofk, Ballagó utca 14/a 3. em 31.")
 #' cleanAddress(cimek)
+#' @encoding UTF-8
 #' @export
 
-cleanAddress <- function(x, alternative = TRUE){
+cleanAddress <- function(x, alternative = FALSE){
   irszam <- cleanZip(x,
                      alternative)
   varosok <- varosok[which(!duplicated(varosok$postal)),]

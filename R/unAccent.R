@@ -8,7 +8,7 @@
 #'
 #' @details
 #' Az ékezet eltávolítását az \code{iconv(x, from="", to="ASCII//TRANSLIT")}
-#'   függvény csinálja. 
+#'   függvény csinálja.
 #' A \code{factor} változókat feldolgozás előtt karakterré alakítja
 #'
 #' @return
@@ -21,14 +21,15 @@
 #' unAccent("Árvíztűrő tükörfúrógép")
 #' unAccent("Árvíztűrő tükörfúrógép", TRUE)
 #'
+#' @encoding UTF-8
 #' @export
 
 unAccent <- function(x, alternative = FALSE){
-  
+
   if(is.factor(x)){
     x <- as.character(x)
   }
-  
+
   if(!alternative){
     encs <- if(is.character(x)){
               Encoding(x)
@@ -36,13 +37,28 @@ unAccent <- function(x, alternative = FALSE){
               rep(NA_character_, length(x))
             }
 
-    encs[encs == "unknown" | is.na(encs)] <- "ASCII"
+    # if windows, set unknown to CP-*, otherwise to UTF-8
+    if(Sys.info()[["sysname"]] == "Windows"){
+      lang_id = strsplit(Sys.getlocale(), split=";")[[1]][1]
+      if(is.na(suppressWarnings(as.numeric(lang_id)))){
+        base_enc <- "windows-1250" # Hungarian locale as base
+      } else {
+        base_enc <- paste0("windows-",
+                           substring(lang_id,
+                                     nchar(lang_id)-3,
+                                     nchar(lang_id)))
+      }
+    } else {
+      base_enc <- "UTF-8"
+    }
+
+    encs[encs == "unknown" | is.na(encs)] <- base_enc
     iconved <- mapply(iconv,
                      from = encs,
                      x = x,
                      MoreArgs = list(to = "ASCII//TRANSLIT"))
     return(unname(iconved))
-  
+
   } else {
     x <- gsub("\u00E0", "a", x)
     x <- gsub("\u00E1", "a", x)

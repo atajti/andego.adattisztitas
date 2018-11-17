@@ -20,6 +20,7 @@
 #' @examples
 #' toAlphaAndDigits("1+4=öt")
 #'
+#' @encoding UTF-8
 #' @export
 
 

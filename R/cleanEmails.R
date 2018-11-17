@@ -21,6 +21,7 @@
 #' @examples
 #' cleanEmails("vmi@email.cim")
 #'
+#' @encoding UTF-8
 #' @export
 
 

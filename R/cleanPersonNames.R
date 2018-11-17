@@ -25,6 +25,7 @@
 #' cleanPersonNames("S. József Benedek")
 #' cleanPersonNames("Sándor J. Benedek")
 #'
+#' @encoding UTF-8
 #' @export
 
 cleanPersonNames <- function(x){
